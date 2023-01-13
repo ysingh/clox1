@@ -44,11 +44,11 @@ void Lox::runPrompt(void) {
 void Lox::run(std::string src) {
 	std::cout << src << std::endl;
 
-	Scanner scanner;
-	std::vector<int> tokens = scanner.scanTokens();
+	Scanner scanner(src);
+	std::vector<Token> tokens = scanner.scanTokens();
 
-	for (int i : tokens) {
-		std::cout << i << std::endl;
+	for (Token i : tokens) {
+		std::cout << i.toString() << std::endl;
 	}	
 }
 
