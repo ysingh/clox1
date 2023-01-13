@@ -4,7 +4,7 @@ Scanner::Scanner(std::string src) : source{ src } {}
 
 std::vector<Token> Scanner::scanTokens(void) {
 	std::vector<Token> tokens{};
-	while (1) {
+	while (!isAtEnd) {
 		start = current;
 		scanToken();
 
